@@ -1,0 +1,95 @@
+# .gitignore
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+target/
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# IDEs
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Other
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore node_modules
+node_modules/
+
+# Ignore Next.js build artifacts
+.next/
+
+# React and Next.js
+.next/
+node_modules/
+build/
+dist/
+out/
+*.log
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Other
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore node_modules
+node_modules/
+
+# Ignore Next.js build artifacts
+.next/
+
+# React and Next.js
+build/
+dist/
+out/
+*.log
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
