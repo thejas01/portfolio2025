@@ -9,24 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-slot": "latest",
+    "@shadcn/ui": "^0.0.4",
     "class-variance-authority": "latest",
     "clsx": "latest",
     "lucide-react": "latest",
+    "next": "latest",
     "next-themes": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "sonner": "latest",
     "tailwind-merge": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
+    "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@types/node": "latest",
-    "tailwindcss": "latest",
+    "autoprefixer": "latest",
     "postcss": "latest",
-    "autoprefixer": "latest"
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }
