@@ -49,7 +49,7 @@ export function HeroSection() {
           <div className="w-[280px] h-[280px] rounded-full bg-yellow-400 p-2">
             <div className="w-full h-full rounded-full border-4 border-green-600 overflow-hidden">
               <Image
-                src="/placeholder.svg"
+                src="/images/profile.png"
                 alt="Profile"
                 width={280}
                 height={280}
