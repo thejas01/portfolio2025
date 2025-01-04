@@ -6,23 +6,23 @@ import { Card, CardContent } from "@/components/ui/card"
 export function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "An exceptional developer who delivers outstanding results. Their expertise in creating user-centric solutions has been invaluable to our project.",
-      author: "Client Name",
-      role: "CEO, Company Name",
-      image: "/placeholder.svg"
+      quote: "Worked as a Java developer specializing in creating robust and scalable healthcare solutions, enhancing patient care and operational efficiency.",
+      author: "CitiusTech Healthcare",
+      role: "Trainee Software Engineer",
+      image: "/images/citiustech-logo.png"
     },
     {
-      quote: "Working with them was a game-changer for our business. They understood our needs perfectly and delivered beyond expectations.",
-      author: "Client Name",
-      role: "Product Manager, Company Name",
-      image: "/placeholder.svg"
+      quote: "Working as a Java developer proficient in database management and Docker, building scalable, containerized solutions for efficient software deployment.",
+      author: "Omnion Pre media",
+      role: "Software Engineer",
+      image: "/images/omnion-logo.png"
     }
   ]
 
   return (
     <section id="testimonials" className="py-24">
       <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold mb-12">What Clients Say</h2>
+        <h2 className="text-3xl font-bold mb-12">Experience</h2>
         <div className="grid gap-8 md:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border-2 border-zinc-200 dark:border-zinc-800">

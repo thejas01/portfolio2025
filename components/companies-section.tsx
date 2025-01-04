@@ -11,7 +11,7 @@ export function CompaniesSection() {
     <section className="py-12 border-t">
       <div className="container px-4 md:px-6 max-w-3xl mx-auto">
         <p className="text-center text-sm text-zinc-600 dark:text-zinc-400 mb-8">
-          SOFTWARE ENGINEER AT CITIUSTECH AND OMNION
+          WORK EXPERIENCE
         </p>
         <div className="flex justify-center items-center gap-12 flex-wrap">
           {companies.map((company) => (
