@@ -1,4 +1,7 @@
 import { Github, Twitter, LinkedinIcon, Linkedin, Heart } from 'lucide-react'
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import Link from 'next/link'
 
 export function Footer() {
@@ -41,7 +44,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-zinc-300 transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
+                <FaLinkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
@@ -50,7 +53,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-zinc-300 transition-colors"
               >
-                <Github className="h-5 w-5" />
+                <FaGithub className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
               <a
@@ -59,7 +62,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-zinc-300 transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <FaSquareXTwitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </a>
             </div>

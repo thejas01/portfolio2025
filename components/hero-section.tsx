@@ -40,7 +40,7 @@ export function HeroSection() {
               asChild
             >
               <a href="https://github.com/thejas01" target="_blank" rel="noopener noreferrer">
-                More about me
+                My Resume
               </a>
             </Button>
           </div>

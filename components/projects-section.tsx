@@ -26,7 +26,7 @@ export function ProjectsSection() {
       title: "FullFrame",
       description: "FullFrame is an AI platform which analyses your scripts using a in-house customised LLM and turns it into a meaningful knowledge base",
       longDescription: "This is one of my client projects, I worked as a Full-stack engineer (React, JavaScript, Python, MongoDB). I built out the List builder and Idea generator features from scratch",
-      image: "/placeholder.svg",
+      image: "/images/s1.png",
       link: "https://github.com/thejas01/spring-shield",
       technologies: [
         { name: "GitHub" },
