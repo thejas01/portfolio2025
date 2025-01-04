@@ -22,11 +22,19 @@ export function HeroSection() {
           <h1 className="text-xl font-normal">
             Hi there, I&apos;m Thejas👋
           </h1>
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
+          {/* <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
             I help people and brands reach their business goals by designing & building{" "}
             <span className="text-blue-500">customer-centric software</span>{" "}
             <span className="text-teal-500">products</span> and interactive experiences
-          </h2>
+          </h2> */}
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
+  I specialize in designing and developing{" "}
+  <span className="text-blue-500">robust Java-based applications</span>{" "}
+  that help businesses achieve their goals. With a strong focus on{" "}
+  <span className="text-teal-500">clean code, scalability</span>, and{" "}
+  <span className="text-teal-500">performance</span>, I create software solutions that deliver real value to users
+</h2>
+
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button 
               className="bg-gradient-to-r from-blue-500 to-teal-500 text-white"

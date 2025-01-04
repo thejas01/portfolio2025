@@ -39,7 +39,7 @@ export function Footer() {
             {/* Right Column */}
             <div className="flex justify-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/thejas-g-s-bb8037219"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-zinc-300 transition-colors"
@@ -48,7 +48,7 @@ export function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/thejas01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-zinc-300 transition-colors"
