@@ -17,7 +17,7 @@ export function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center">
-      <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 pt-16">
+      <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center gap-8  pt-28 md:pt-16">
         <div className="flex-1 space-y-4">
           <h1 className="text-xl font-normal">
             Hi there, I&apos;m Thejas👋
