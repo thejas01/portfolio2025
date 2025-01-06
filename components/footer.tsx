@@ -14,7 +14,7 @@ export function Footer() {
             {/* Left Column */}
             <div className="flex flex-col items-center space-y-2">
               <Link 
-                href="/" 
+                href="https://thejasdev.vercel.app/" 
                 className="text-blue-400 hover:text-blue-400 transition-colors text-xl font-semibold"
               >
                 Thejas
@@ -28,7 +28,7 @@ export function Footer() {
             {/* Middle Column */}
             <div className="flex flex-col items-center space-y-2 order-last md:order-none">
               <Link 
-                href="/terms" 
+                href="https://thejasdev.vercel.app/" 
                 className="text-blue-400 hover:text-blue-400 transition-colors"
               >
                 Terms & Conditions
