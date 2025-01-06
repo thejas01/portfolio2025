@@ -1,33 +1,36 @@
 import { 
   SiReact, 
   SiNextdotjs, 
-  SiNodedotjs, 
+  SiHibernate,
   SiTypescript, 
-  SiPython, 
-  SiDjango, 
-  SiGraphql,
-  SiRemix,
+  SiMysql,
   SiCss3,
   SiKubernetes,
   SiTerraform,
-  SiGithubactions
+  SiGithubactions,
+  SiSpringboot
+
 } from 'react-icons/si'
 import { Card } from "@/components/ui/card"
+import { DiJava , DiAws} from "react-icons/di";
 
 export function SkillsSection() {
   const skills = [
+    { name: "Java", icon: DiJava, color: "#007396" },
+    { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+    { name: "Hibernate", icon: SiHibernate , color: "#59666C" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-    { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-    { name: "Python", icon: SiPython, color: "#3776AB" },
-    { name: "Django", icon: SiDjango, color: "#092E20" },
-    { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
-    { name: "Remix", icon: SiRemix, color: "#000000" },
     { name: "CSS", icon: SiCss3, color: "#1572B6" },
+    { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
-    { name: "CI/CD", icon: SiGithubactions, color: "#F05032" }
+    { name: "CI/CD", icon: SiGithubactions, color: "#F05032" },
+    { name: "AWS", icon: DiAws, color: "#FF9900" }
+
+    
+    
   ]
 
   return (
