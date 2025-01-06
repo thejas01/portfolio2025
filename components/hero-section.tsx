@@ -27,7 +27,7 @@ export function HeroSection() {
             <span className="text-blue-500">customer-centric software</span>{" "}
             <span className="text-teal-500">products</span> and interactive experiences
           </h2> */}
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
+          <h2 className="text-3xl sm:text-4xl leading-relaxed text-zinc-700 dark:text-zinc-300">
   I specialize in designing and developing{" "}
   <span className="text-blue-500">robust Java-based applications</span>{" "}
   that help businesses achieve their goals. With a strong focus on{" "}
@@ -57,7 +57,7 @@ export function HeroSection() {
           <div className="w-[280px] h-[280px] rounded-full bg-yellow-400 p-2">
             <div className="w-full h-full rounded-full border-4 border-green-600 overflow-hidden">
               <Image
-                src="/images/profile.png"
+                src="/images/pro.png"
                 alt="Profile"
                 width={280}
                 height={280}

@@ -23,44 +23,48 @@ export function ProjectsSection() {
 
   const projects: Project[] = [
     {
-      title: "FullFrame",
-      description: "FullFrame is an AI platform which analyses your scripts using a in-house customised LLM and turns it into a meaningful knowledge base",
-      longDescription: "This is one of my client projects, I worked as a Full-stack engineer (React, JavaScript, Python, MongoDB). I built out the List builder and Idea generator features from scratch",
-      image: "/images/s1.png",
+      title: "Spring Shield",
+      description: "A deployed framework for building secure and scalable applications with Spring with JWT Authentication",
+      longDescription: "This is one of my  projects, I worked as a Full-stack engineer (Java, Spring, Microservices). I built out the Authentication and  generator features from scratch",
+      image: "/images/spring.png",
       link: "https://github.com/thejas01/spring-shield",
       technologies: [
-        { name: "GitHub" },
-        { name: "JavaScript" },
-        { name: "React" },
-        { name: "CSS3" },
-        { name: "Google Gemini" },
-        { name: "OpenAI" }
+        { name: "Java" },
+        { name: "SpringBoot" },
+        { name: "Spring Security" },
+        { name: "Microservices" },
+        { name: "JWT" },
+        { name: "Mysql" }
       ]
     },
     {
-      title: "Project Two",
-      description: "An interactive dashboard that streamlined business operations and improved efficiency",
-      longDescription: "Developed a comprehensive dashboard solution that helped businesses track and improve their operational efficiency through real-time analytics and automated reporting.",
-      image: "/placeholder.svg",
-      link: "#",
+      title: "Microservices and API Gateway",
+      description: "Spring Boot microservices project with Eureka Server and API Gateway(Based on Netflix OSS)",
+      longDescription: "Spring Boot microservices project with Eureka Server and API Gateway. Eureka Server acts as a service registry, while the API Gateway routes requests to services like user-service, which is registered with Eureka. This project demonstrates service discovery, routing, and load balancing in microservices architecture.",
+      image: "/images/micro.png",
+      link: "https://github.com/thejas01/gateway-and-discovery-service",
       technologies: [
-        { name: "React" },
-        { name: "TypeScript" },
-        { name: "Node.js" },
-        { name: "PostgreSQL" }
+        { name: "Microservices" },
+        { name: "Spring Boot" },
+        { name: "Eureka client" },
+        { name: "API Gateway" },
+        { name: "Netflix OSS" },
+        { name: "Mysql" }
       ]
     },
     {
-      title: "Project Three",
-      description: "A mobile-first application that revolutionized user experience in the industry",
-      longDescription: "Created a responsive, mobile-first application that set new standards for user experience in the industry, resulting in increased user engagement and satisfaction.",
-      image: "/placeholder.svg",
+      title: "E-commerce Platform",
+      description: "A backend API for an e-commerce platform built with java ,spring boot and microservices",
+      longDescription: "A modern e-commerce backend system built with Spring Boot, implementing a microservices architecture. Features include product catalog, user authentication with JWT, shopping cart, order management, payment processing, API Gateway, Eureka Server, and messaging with Kafka.",
+      image:  "/images/ecom.png",
       link: "#",
       technologies: [
-        { name: "Next.js" },
-        { name: "TailwindCSS" },
-        { name: "Prisma" },
-        { name: "MongoDB" }
+        { name: "Java" },
+        { name: "Springboot" },
+        { name: "Microservices" },
+        { name: "Mysql" },
+        { name: "Kafka" },
+        { name: "JWT" }
       ]
     }
   ]
