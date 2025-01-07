@@ -57,7 +57,7 @@ export function Footer() {
               </Link>
               <address className="not-italic text-zinc-400 space-y-1 text-center">    
                 <p>Mangalore, India</p>
-                <p>574248</p>
+                <p><span className="sr-only">Email:</span>📧 thejasgs19@gmail.com</p>
               </address>
             </div>
 
