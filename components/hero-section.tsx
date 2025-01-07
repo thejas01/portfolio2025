@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import { Button } from "./ui/button"
+import { Download } from 'lucide-react'
 
 export function HeroSection() {
   const scrollToProjects = () => {
@@ -44,13 +45,28 @@ export function HeroSection() {
             </Button>
             <Button 
               variant="link" 
-              className="text-zinc-800 dark:text-zinc-200"
-              asChild
+              className="text-zinc-800 dark:text-zinc-200 flex items-center gap-2"
+              asChild 
             >
-              <a href="https://github.com/thejas01" target="_blank" rel="noopener noreferrer">
-                My Resume
+              
+              <a href="https://drive.google.com/file/d/19dcu_kAo60aoW7fWxG1dQCHgCs1kk_ex/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+              <Download className="w-4 h-4" />
+                 My Resume
               </a>
             </Button>
+            {/* <Button 
+              variant="link" 
+              className="text-zinc-800 dark:text-zinc-200 flex items-center gap-2"
+              asChild
+            >
+              <a 
+                href="https://drive.google.com/file/d/19dcu_kAo60aoW7fWxG1dQCHgCs1kk_ex/view?usp=drivesdkf" 
+               
+              >
+                <Download className="w-4 h-4" />
+                Download Resume
+              </a>
+            </Button> */}
           </div>
         </div>
         <div className="relative">

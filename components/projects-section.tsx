@@ -38,7 +38,7 @@ export function ProjectsSection() {
       ]
     },
     {
-      title: "Microservices and API Gateway",
+      title: "MicroSeviceRouter",
       description: "Spring Boot microservices project with Eureka Server and API Gateway(Based on Netflix OSS)",
       longDescription: "Spring Boot microservices project with Eureka Server and API Gateway. Eureka Server acts as a service registry, while the API Gateway routes requests to services like user-service, which is registered with Eureka. This project demonstrates service discovery, routing, and load balancing in microservices architecture.",
       image: "/images/micro.png",
