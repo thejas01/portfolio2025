@@ -1,3 +1,4 @@
+'use client'
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -12,7 +13,30 @@ import {
 
 } from 'react-icons/si'
 import { Card } from "@/components/ui/card"
-import { DiJava , DiAws} from "react-icons/di";
+import { DiJava , DiAws} from "react-icons/di"
+import { motion } from "framer-motion";
+
+const iconVariants = {
+  initial: { scale: 1, rotate: 0 },
+  hover: {
+    scale: 1.9,
+    rotate: 360,
+    transition: { duration: 0.3 }
+  }
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  },
+  hover: {
+    scale: 1.05,
+    transition: { duration: 0.2 }
+  }
+}
 
 export function SkillsSection() {
   const skills = [
@@ -45,13 +69,22 @@ export function SkillsSection() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4">
             {skills.map((skill) => (
+ 
               <Card 
                 key={skill.name}
                 className="p-4 flex flex-col items-center justify-center gap-2 bg-white dark:bg-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors group"
               >
-                <div className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  {<skill.icon size={28} color={skill.color} />}
-                </div>
+                
+                <motion.div
+                variants={iconVariants}
+                initial="initial"
+                whileHover="hover"
+              >
+                <skill.icon
+                  className="w-8 h-8"
+                  style={{ color: skill.color }}
+                />
+                </motion.div>
                 <span className="text-sm font-medium text-zinc-900 dark:text-zinc-300">
                   {skill.name}
                 </span>

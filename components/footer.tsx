@@ -1,8 +1,44 @@
-import { Github, Twitter, LinkedinIcon, Linkedin, Heart } from 'lucide-react'
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+'use client'
+
 import Link from 'next/link'
+import Image from 'next/image'
+import { FaLinkedin, FaGithub } from "react-icons/fa"
+import { FaSquareXTwitter } from "react-icons/fa6"
+import { Heart } from 'lucide-react'
+import { motion } from "framer-motion"
+
+const iconVariants = {
+  initial: { scale: 1, rotate: 0 },
+  hover: { 
+    scale: 3.0, 
+    rotate: [0, -10, 10, -10, 10, 0],
+    transition: { 
+      duration: 0.5,
+      rotate: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 1
+      }
+    } 
+  }
+}
+
+const SocialIcon = ({ href, icon: Icon, label }: { href: string; icon: React.ElementType; label: string }) => {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-zinc-400 hover:text-zinc-300 transition-colors"
+      variants={iconVariants}
+      initial="initial"
+      whileHover="hover"
+    >
+      <Icon className="h-5 w-5" />
+      <span className="sr-only">{label}</span>
+    </motion.a>
+  )
+}
 
 export function Footer() {
   return (
@@ -14,13 +50,13 @@ export function Footer() {
             {/* Left Column */}
             <div className="flex flex-col items-center space-y-2">
               <Link 
-                href="https://thejasdev.vercel.app/" 
+                href="/" 
                 className="text-blue-400 hover:text-blue-400 transition-colors text-xl font-semibold"
               >
                 Thejas
               </Link>
               <address className="not-italic text-zinc-400 space-y-1 text-center">    
-                <p>Mangalore,India</p>
+                <p>Mangalore, India</p>
                 <p>574248</p>
               </address>
             </div>
@@ -28,43 +64,31 @@ export function Footer() {
             {/* Middle Column */}
             <div className="flex flex-col items-center space-y-2 order-last md:order-none">
               <Link 
-                href="https://thejasdev.vercel.app/" 
+                href="/terms" 
                 className="text-blue-400 hover:text-blue-400 transition-colors"
               >
                 Terms & Conditions
               </Link>
-              <p className="text-zinc-400">© 2025 Thejas</p>
+              <p className="text-zinc-400">© {new Date().getFullYear()} Thejas</p>
             </div>
 
             {/* Right Column */}
             <div className="flex justify-center gap-4">
-              <a
+              <SocialIcon 
                 href="https://www.linkedin.com/in/thejas-g-s-bb8037219"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-300 transition-colors"
-              >
-                <FaLinkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a
+                icon={FaLinkedin}
+                label="LinkedIn"
+              />
+              <SocialIcon
                 href="https://github.com/thejas01"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-300 transition-colors"
-              >
-                <FaGithub className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a
+                icon={FaGithub}
+                label="GitHub"
+              />
+              <SocialIcon
                 href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-300 transition-colors"
-              >
-                <FaSquareXTwitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
+                icon={FaSquareXTwitter}
+                label="Twitter"
+              />
             </div>
           </div>
 
@@ -80,3 +104,4 @@ export function Footer() {
     </footer>
   )
 }
+
