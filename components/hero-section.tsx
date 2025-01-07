@@ -44,7 +44,7 @@ export function HeroSection() {
             I specialize in designing and developing{" "}
             <span className="text-blue-500">robust Java-based applications</span>{" "}
             that help businesses achieve their goals. With a strong focus on{" "}
-            <span className="text-teal-500">clean code, scalability</span>and{" "}
+            <span className="text-teal-500">clean code, scalability</span> and{" "}
             <span className="text-teal-500">performance</span>.
           </motion.h2>
 

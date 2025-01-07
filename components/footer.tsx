@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 const iconVariants = {
   initial: { scale: 1, rotate: 0 },
   hover: { 
-    scale: 3.0, 
+    scale: 1.8, 
     rotate: [0, -10, 10, -10, 10, 0],
     transition: { 
       duration: 0.5,
