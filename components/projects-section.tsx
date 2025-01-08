@@ -57,7 +57,7 @@ export function ProjectsSection() {
       description: "A backend API for an e-commerce platform built with java ,spring boot and microservices",
       longDescription: "A modern e-commerce backend system built with Spring Boot, implementing a microservices architecture. Features include product catalog, user authentication with JWT, shopping cart, order management, payment processing, API Gateway, Eureka Server, and messaging with Kafka.",
       image:  "/images/ecom.png",
-      link: "#",
+      link: "https://github.com/thejas01/ecommerce-microservices-jwt-auth",
       technologies: [
         { name: "Java" },
         { name: "Springboot" },
