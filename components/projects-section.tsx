@@ -82,7 +82,7 @@ export function ProjectsSection() {
             >
               <CardContent className="p-0">
                 <div className="relative aspect-video overflow-hidden">
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                     <p className="text-white flex items-center gap-2">
                       View Project <ArrowRight className="h-4 w-4" />
                     </p>
@@ -92,7 +92,7 @@ export function ProjectsSection() {
                     alt={project.title}
                     width={600}
                     height={400}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-sm md:group-hover:blur-sm touch:blur-[2px] touch:scale-105"
                   />
                 </div>
                 <div className="p-6">

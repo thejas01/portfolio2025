@@ -10,24 +10,22 @@ import {
   SiTerraform,
   SiGithubactions,
   SiSpringboot
-
 } from 'react-icons/si'
-import { Card } from "@/components/ui/card"
-import { DiJava , DiAws} from "react-icons/di"
-import { motion } from "framer-motion";
+import { DiJava, DiAws } from "react-icons/di"
+import { motion } from "framer-motion"
 
 const iconVariants = {
   initial: { scale: 1, rotate: 0 },
   hover: {
-    scale: 1.9,
+    scale: 1.2,
     rotate: 360,
     transition: { duration: 0.3 }
   }
 }
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
+  initial: { opacity: 0, y: 20 },
+  animate: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5 }
@@ -42,7 +40,7 @@ export function SkillsSection() {
   const skills = [
     { name: "Java", icon: DiJava, color: "#007396" },
     { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
-    { name: "Hibernate", icon: SiHibernate , color: "#59666C" },
+    { name: "Hibernate", icon: SiHibernate, color: "#59666C" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
@@ -52,9 +50,6 @@ export function SkillsSection() {
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
     { name: "CI/CD", icon: SiGithubactions, color: "#F05032" },
     { name: "AWS", icon: DiAws, color: "#FF9900" }
-
-    
-    
   ]
 
   return (
@@ -67,28 +62,27 @@ export function SkillsSection() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {skills.map((skill) => (
- 
-              <Card 
+              <motion.div
                 key={skill.name}
-                className="p-4 flex flex-col items-center justify-center gap-2 bg-white dark:bg-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors group"
-              >
-                
-                <motion.div
-                variants={iconVariants}
+                variants={cardVariants}
                 initial="initial"
+                animate="animate"
                 whileHover="hover"
+                whileTap="hover"
+                className="p-4 flex flex-col items-center justify-center gap-2 bg-white dark:bg-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors rounded-lg border border-zinc-200 dark:border-zinc-700"
               >
-                <skill.icon
-                  className="w-8 h-8"
-                  style={{ color: skill.color }}
-                />
+                <motion.div
+                  variants={iconVariants}
+                  className="relative w-10 h-10 flex items-center justify-center"
+                >
+                  <skill.icon size={28} color={skill.color} />
                 </motion.div>
                 <span className="text-sm font-medium text-zinc-900 dark:text-zinc-300">
                   {skill.name}
                 </span>
-              </Card>
+              </motion.div>
             ))}
           </div>
         </div>
