@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
-import { toast } from "sonner"
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { toast, Toaster } from "sonner"
+import { CustomToast } from "@/components/ui/custom-toast"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -16,47 +18,67 @@ export function ContactSection() {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    toast.success("Message sent successfully!")
+    toast.custom((t) => (
+      <CustomToast message="Message sent successfully!" />
+    ))
     setIsSubmitting(false)
     ;(e.target as HTMLFormElement).reset()
   }
 
   return (
-    <section id="contact" className="py-24 bg-zinc-50 dark:bg-zinc-800/50">
+    <motion.section 
+      id="contact" 
+      className="py-24 bg-zinc-50 dark:bg-zinc-800/50"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container px-4 md:px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 mb-8">
+          <motion.h2 
+            className="text-3xl font-bold mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            Get in Touch
+          </motion.h2>
+          <motion.p 
+            className="text-zinc-600 dark:text-zinc-400 mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Have a project in mind? Let's work together to create something amazing.
-          </p>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          </motion.p>
+          <motion.form 
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             <div className="grid gap-6 sm:grid-cols-2">
-              <div className="space-y-2">
-                <Input
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  className="bg-white dark:bg-zinc-900"
-                />
-              </div>
-              <div className="space-y-2">
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Your email"
-                  required
-                  className="bg-white dark:bg-zinc-900"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Textarea
-                name="message"
-                placeholder="Your message"
+              <Input
+                name="name"
+                placeholder="Your name"
                 required
-                className="min-h-[150px] bg-white dark:bg-zinc-900"
+                className="bg-white dark:bg-zinc-900"
+              />
+              <Input
+                name="email"
+                type="email"
+                placeholder="Your email"
+                required
+                className="bg-white dark:bg-zinc-900"
               />
             </div>
+            <Textarea
+              name="message"
+              placeholder="Your message"
+              required
+              className="min-h-[150px] bg-white dark:bg-zinc-900"
+            />
             <Button
               type="submit"
               className="w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white"
@@ -64,10 +86,17 @@ export function ContactSection() {
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
-          </form>
+          </motion.form>
         </div>
       </div>
-    </section>
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          className: '!bg-transparent !border-0 !shadow-none !p-0',
+        }}
+      />
+    </motion.section>
   )
 }
 
