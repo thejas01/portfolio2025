@@ -1,16 +1,22 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6"
-import { Heart } from 'lucide-react'
 import { motion } from "framer-motion"
+import { MapPin, Mail, Phone } from 'lucide-react'
+import { Logo } from './logo'
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+}
 
 const iconVariants = {
   initial: { scale: 1, rotate: 0 },
   hover: { 
-    scale: 1.8, 
+    scale: 1.3, 
     rotate: [0, -10, 10, -10, 10, 0],
     transition: { 
       duration: 0.5,
@@ -40,40 +46,114 @@ const SocialIcon = ({ href, icon: Icon, label }: { href: string; icon: React.Ele
   )
 }
 
+const smoothScroll = (target: number) => {
+  const startPosition = window.pageYOffset
+  const distance = target - startPosition
+  const duration = 800 // ms
+  let start: number | null = null
+
+  const step = (timestamp: number) => {
+    if (!start) start = timestamp
+    const progress = timestamp - start
+    const percentage = Math.min(progress / duration, 1)
+
+    window.scrollTo(0, startPosition + distance * easeInOutCubic(percentage))
+
+    if (progress < duration) {
+      window.requestAnimationFrame(step)
+    }
+  }
+
+  window.requestAnimationFrame(step)
+}
+
+// Easing function for smoother animation
+const easeInOutCubic = (t: number): number => {
+  return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+}
+
 export function Footer() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    e.preventDefault()
+    let targetPosition: number
+
+    if (target === 'top') {
+      targetPosition = 0
+    } else {
+      const element = document.getElementById(target)
+      if (element) {
+        const navbarHeight = 80
+        targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+      } else {
+        return // Exit if target element not found
+      }
+    }
+
+    smoothScroll(targetPosition)
+  }
+
   return (
     <footer className="bg-zinc-900 py-16">
       <div className="container px-4 md:px-6 max-w-5xl mx-auto">
-        <div className="flex flex-col items-center space-y-12">
-          {/* Main Content */}
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-4">
-            {/* Left Column */}
-            <div className="flex flex-col items-center space-y-2">
-              <Link 
-                href="/" 
-                className="text-blue-400 hover:text-blue-400 transition-colors text-xl font-semibold"
-              >
-                Thejas
-              </Link>
-              <address className="not-italic text-zinc-400 space-y-1 text-center">    
-                <p>Mangalore, India</p>
-                <p><span className="sr-only">Email:</span>📧 thejasgs19@gmail.com</p>
-              </address>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Contact Column */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-white">Contact</h2>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 text-zinc-400">
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-white">Thejas G S</p>
+                  <p className="text-sm">Mangalore, Karnataka</p>
+                  <p className="text-sm">India, 574248</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-zinc-400">
+                <Mail className="w-5 h-5 flex-shrink-0" />
+                <a href="mailto:thejasgowdas01@gmail.com" className="text-sm hover:text-white transition-colors">
+                  thejasgs19@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-zinc-400">
+                <Phone className="w-5 h-5 flex-shrink-0" />
+                <a href="tel:+919481187122" className="text-sm hover:text-white transition-colors">
+                  +91 9591740163
+                </a>
+              </div>
             </div>
+          </div>
 
-            {/* Middle Column */}
-            <div className="flex flex-col items-center space-y-2 order-last md:order-none">
+          {/* Links Column */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-white">Links</h2>
+            <div className="flex flex-col space-y-2">
               <Link 
-                href="/terms" 
-                className="text-blue-400 hover:text-blue-400 transition-colors"
+                href="/"
+                onClick={(e) => handleScroll(e, 'top')}
+                className="text-zinc-400 hover:text-white transition-colors"
               >
-                Terms & Conditions
+                Home
               </Link>
-              <p className="text-zinc-400">© {new Date().getFullYear()} Thejas</p>
+              <Link 
+                href="#contact" 
+                onClick={(e) => handleScroll(e, 'contact')}
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                Contact
+              </Link>
+              <Link href="/terms" className="text-zinc-400 hover:text-white transition-colors">
+                Terms of Use
+              </Link>
+              <Link href="/privacy" className="text-zinc-400 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
             </div>
+          </div>
 
-            {/* Right Column */}
-            <div className="flex justify-center gap-4">
+          {/* Logo Column */}
+          <div className="flex flex-col items-center md:items-end space-y-6">
+            <Logo />
+            <div className="flex gap-4">
               <SocialIcon 
                 href="https://www.linkedin.com/in/thejas-g-s-bb8037219"
                 icon={FaLinkedin}
@@ -91,27 +171,18 @@ export function Footer() {
               />
             </div>
           </div>
-
-          {/* Bottom Text */}
-          <div className="flex items-center gap-1 text-zinc-400 text-sm pt-4">
-            <span>Built with</span>
-            <motion.div
-              animate={{ 
-                scale: [1, 1.2, 1],
-                rotate: [0, 10, -10, 0]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            >
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
-            </motion.div>
-            <span>in</span>
-            <span className="text-lg">🇮🇳</span>
-          </div>
         </div>
+
+        {/* Copyright */}
+        <motion.div 
+          className="mt-16 text-center text-zinc-500 text-sm"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          © 2008-{new Date().getFullYear()} . ALL RIGHTS RESERVED.
+        </motion.div>
       </div>
     </footer>
   )
