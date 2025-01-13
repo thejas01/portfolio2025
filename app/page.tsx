@@ -6,6 +6,7 @@ import { SkillsSection } from "@/components/skills-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { AiChat } from "@/components/ai-chat"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <AiChat />
     </div>
   )
 }
