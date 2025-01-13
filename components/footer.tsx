@@ -95,7 +95,19 @@ export function Footer() {
           {/* Bottom Text */}
           <div className="flex items-center gap-1 text-zinc-400 text-sm pt-4">
             <span>Built with</span>
-            <Heart className="h-4 w-4 text-red-500 fill-current" />
+            <motion.div
+              animate={{ 
+                scale: [1, 1.2, 1],
+                rotate: [0, 10, -10, 0]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+            >
+              <Heart className="h-4 w-4 text-red-500 fill-current" />
+            </motion.div>
             <span>in</span>
             <span className="text-lg">🇮🇳</span>
           </div>
