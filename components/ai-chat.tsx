@@ -43,10 +43,10 @@ export function AiChat() {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Button - adjusted bottom spacing for mobile */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 p-4 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full text-white shadow-lg"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 p-4 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full text-white shadow-lg"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Open AI Chat"
@@ -54,16 +54,16 @@ export function AiChat() {
         <MessageSquare className="w-6 h-6" />
       </motion.button>
 
-      {/* Chat Interface */}
+      {/* Chat Interface - adjusted positioning and width for mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
-            className="fixed bottom-24 right-6 z-50 w-full max-w-md"
+            className="fixed inset-x-0 bottom-0 sm:bottom-24 sm:right-6 sm:inset-x-auto z-50 w-full sm:max-w-md mx-auto sm:mx-0"
           >
-            <Card className="border-2 border-zinc-200 dark:border-zinc-800">
+            <Card className="border-2 border-zinc-200 dark:border-zinc-800 sm:rounded-xl rounded-b-none">
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800">
                 <h2 className="text-lg font-semibold">AI Assistant</h2>

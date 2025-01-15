@@ -110,13 +110,13 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-zinc-400">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <a href="mailto:thejasgowdas01@gmail.com" className="text-sm hover:text-white transition-colors">
+                <a href="mailto:thejasgs19@gmail.com" className="text-sm hover:text-white transition-colors">
                   thejasgs19@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-zinc-400">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+919481187122" className="text-sm hover:text-white transition-colors">
+                <a href="tel:+919591740163" className="text-sm hover:text-white transition-colors">
                   +91 9591740163
                 </a>
               </div>
