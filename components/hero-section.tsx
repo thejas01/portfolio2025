@@ -76,17 +76,13 @@ export function HeroSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="w-[280px] h-[280px] rounded-full bg-yellow-400 p-2">
-            <div className="w-full h-full rounded-full border-4 border-green-600 overflow-hidden">
-              <Image
-                src="/images/pro.png"
-                alt="Profile"
-                width={280}
-                height={280}
-                className="w-full h-full object-cover"
-              />
+          <div className="relative w-48 h-48 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full p-1">
+                <div className="w-full h-full rounded-full border-4 border-white dark:border-zinc-800 overflow-hidden bg-white dark:bg-zinc-800">
+                  <Image src="/images/pro.png" alt="Profile" fill className="object-cover" sizes="192px" priority />
+                </div>
+              </div>
             </div>
-          </div>
         </motion.div>
       </div>
     </motion.section>
