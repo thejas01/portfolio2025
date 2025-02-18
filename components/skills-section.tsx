@@ -9,7 +9,7 @@ import {
   SiKubernetes,
   SiTerraform,
   SiGithubactions,
-  SiSpringboot
+  SiSpringboot,
 } from 'react-icons/si'
 import { DiJava, DiAws } from "react-icons/di"
 import { motion } from "framer-motion"
