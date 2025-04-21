@@ -15,14 +15,31 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    toast.custom((t) => (
-      <CustomToast message="Message sent successfully!" />
-    ))
-    setIsSubmitting(false)
-    ;(e.target as HTMLFormElement).reset()
+    try {
+      const form = e.target as HTMLFormElement
+      const response = await fetch("https://formspree.io/f/mpwdadra", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      })
+      
+      if (response.ok) {
+        toast.custom((t) => (
+          <CustomToast message="Message sent successfully!" />
+        ))
+        form.reset()
+      } else {
+        throw new Error("Failed to send message")
+      }
+    } catch (error) {
+      toast.custom((t) => (
+        <CustomToast message="Failed to send message. Please try again." />
+      ))
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
