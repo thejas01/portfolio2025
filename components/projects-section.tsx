@@ -53,18 +53,18 @@ export function ProjectsSection() {
       ]
     },
     {
-      title: "E-commerce Platform",
-      description: "A backend API for an e-commerce platform built with java ,spring boot and microservices",
-      longDescription: "A modern e-commerce backend system built with Spring Boot, implementing a microservices architecture. Features include product catalog, user authentication with JWT, shopping cart, order management, payment processing, API Gateway, Eureka Server, and messaging with Kafka.",
-      image:  "/images/ecom.png",
-      link: "https://github.com/thejas01/ecommerce-microservices-jwt-auth",
+      title: "Stock-Price streamer",
+      description: "A modern application for streaming stock prices using Kafka and Zookeeper",
+      longDescription: "This is one of my projects where I worked as a Full-stack engineer (Java, Spring, React, Kafka, Zookeeper).",
+      image:  "/images/kafka.png",
+      link: "https://github.com/thejas01/stock-price-streamer.git",
       technologies: [
         { name: "Java" },
         { name: "Springboot" },
-        { name: "Microservices" },
-        { name: "Mysql" },
+        { name: "Docker" },
+        { name: "React" },
         { name: "Kafka" },
-        { name: "JWT" }
+        { name: "Zookeeper" }
       ]
     }
   ]
