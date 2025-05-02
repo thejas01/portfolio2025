@@ -15,7 +15,7 @@ export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
-  const navItems = ['projects', 'experience','skills', 'contact']
+  const navItems = ['projects', 'experience', 'skills', 'contact']
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10)
