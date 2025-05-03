@@ -8,7 +8,7 @@ export function HeroSection() {
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects')
     if (projectsSection) {
-      const navbarHeight = 80 // Adjust this value based on your navbar height
+      const navbarHeight = 80
       const projectsSectionTop = projectsSection.offsetTop - navbarHeight
       window.scrollTo({
         top: projectsSectionTop,
@@ -18,12 +18,12 @@ export function HeroSection() {
   };
 
   return (
-    <motion.section className="min-h-screen flex items-center"
+    <motion.section className="h-screen flex items-center relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center gap-8  pt-28 md:pt-16">
+      <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 pt-16">
         <motion.div className="flex-1 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,12 +77,34 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="relative w-48 h-48 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full p-1">
-                <div className="w-full h-full rounded-full border-4 border-white dark:border-zinc-800 overflow-hidden bg-white dark:bg-zinc-800">
-                  <Image src="/images/pro.png" alt="Profile" fill className="object-cover" sizes="192px" priority />
-                </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full p-1">
+              <div className="w-full h-full rounded-full border-4 border-white dark:border-zinc-800 overflow-hidden bg-white dark:bg-zinc-800">
+                <Image src="/images/pro.png" alt="Profile" fill className="object-cover" sizes="192px" priority />
               </div>
             </div>
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <motion.div 
+          className="w-6 h-12 rounded-full border-2 border-zinc-500 dark:border-zinc-400 flex justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          <motion.div 
+            className="w-1.5 h-1.5 bg-zinc-500 dark:bg-zinc-400 rounded-full mt-2"
+            animate={{ 
+              y: [0, 16, 0],
+            }}
+            transition={{ 
+              duration: 1.5, 
+              repeat: Infinity,
+              ease: "easeInOut" 
+            }}
+          />
         </motion.div>
       </div>
     </motion.section>
