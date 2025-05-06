@@ -23,9 +23,12 @@ export function NavBar() {
     let currentSection = ''
     const scrollPosition = window.scrollY + 100 // Adjust for navbar height
 
+    // Check each section's position
     for (const section of navItems) {
       const element = document.getElementById(section)
-      if (element && scrollPosition >= element.offsetTop) {
+      if (element && scrollPosition >= element.offsetTop && 
+          // Add check to ensure we're within the section's height range
+          scrollPosition < (element.offsetTop + element.offsetHeight)) {
         currentSection = section
       }
     }
