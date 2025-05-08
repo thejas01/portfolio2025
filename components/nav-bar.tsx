@@ -15,17 +15,47 @@ export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("")
 
-  const navItems = ["projects", "skills", "testimonials", "contact"]
+  const navItems = ["projects", "skills", "experience", "contact"]
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 10)
 
+    // Get current scroll position with offset for navbar
+    const scrollPosition = window.scrollY + 150
+
+    // Check if we're in the hero section (top of the page)
+    const heroSection = document.querySelector('section:first-of-type')
+    if (heroSection) {
+      const heroRect = heroSection.getBoundingClientRect()
+      const heroBottom = heroRect.bottom + window.scrollY
+      
+      // If we're still primarily in the hero section, clear active section
+      if (scrollPosition < heroBottom - 200) {
+        setActiveSection("")
+        return
+      }
+    }
+
+    // Find which section is currently most visible in the viewport
     let currentSection = ""
-    const scrollPosition = window.scrollY + 100 // Adjust for navbar height
+    let maxVisibility = 0
 
     for (const section of navItems) {
       const element = document.getElementById(section)
-      if (element && scrollPosition >= element.offsetTop) {
+      if (!element) continue
+
+      const rect = element.getBoundingClientRect()
+      const sectionTop = rect.top + window.scrollY
+      const sectionBottom = rect.bottom + window.scrollY
+      
+      // Calculate how much of the section is visible
+      const visibleTop = Math.max(scrollPosition - 150, sectionTop)
+      const visibleBottom = Math.min(scrollPosition + window.innerHeight, sectionBottom)
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+      
+      // If this section has more visible area, make it the active one
+      if (visibleHeight > maxVisibility) {
+        maxVisibility = visibleHeight
         currentSection = section
       }
     }
