@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6"
+import { SiLeetcode } from "react-icons/si"
 import { motion } from "framer-motion"
 import { MapPin, Mail, Phone } from 'lucide-react'
 import { Logo } from './logo'
@@ -165,9 +166,9 @@ export function Footer() {
                 label="GitHub"
               />
               <SocialIcon
-                href="https://twitter.com"
-                icon={FaSquareXTwitter}
-                label="Twitter"
+                href="https://leetcode.com/u/Thejas01/"
+                icon={SiLeetcode}
+                label="LeetCode"
               />
             </div>
           </div>
