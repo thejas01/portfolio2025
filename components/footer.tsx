@@ -182,7 +182,7 @@ export function Footer() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          © 2008-{new Date().getFullYear()} . ALL RIGHTS RESERVED.
+          ©{new Date().getFullYear()} . ALL RIGHTS RESERVED.
         </motion.div>
       </div>
     </footer>
