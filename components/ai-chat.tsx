@@ -6,6 +6,7 @@ import { MessageSquare, X, Send } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
+import { findBestResponse } from "@/lib/chatbot-knowledge"
 
 interface Message {
   role: 'user' | 'assistant'
@@ -28,14 +29,19 @@ export function AiChat() {
     setIsLoading(true)
 
     try {
-      // Simulate AI response for now
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Simulate AI response with knowledge base
+      await new Promise(resolve => setTimeout(resolve, 800))
+      const response = findBestResponse(userMessage)
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: "Hello! I'm your AI assistant. How can I help you today?"
+        content: response
       }])
     } catch (error) {
       console.error('Error:', error)
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: "I apologize, but I encountered an error. Please try again."
+      }])
     } finally {
       setIsLoading(false)
     }
