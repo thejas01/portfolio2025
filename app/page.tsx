@@ -10,7 +10,7 @@ import { AiChat } from "@/components/ai-chat"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-900 relative">
+    <div className="min-h-screen bg-background relative">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat opacity-20 dark:opacity-10"
         style={{
