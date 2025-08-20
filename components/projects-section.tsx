@@ -23,18 +23,20 @@ export function ProjectsSection() {
 
   const projects: Project[] = [
     {
-      title: "Spring Shield",
-      description: "A deployed framework for building secure and scalable applications with Spring with JWT Authentication",
+      title: "Flight Booking System",
+      description: "A modern, microservices-based flight booking system built with Spring Boot, React, and PostgreSQL. The system features JWT authentication, role-based authorization, and a clean, responsive user interface.",
       longDescription: "This is one of my  projects, I worked as a Full-stack engineer (Java, Spring, Microservices). I built out the Authentication and  generator features from scratch",
-      image: "/images/spring.png",
-      link: "https://github.com/thejas01/spring-shield",
+      image: "/images/flight.png",
+      link: "https://github.com/thejas01/airline-booking-system",
       technologies: [
         { name: "Java" },
         { name: "SpringBoot" },
         { name: "Spring Security" },
         { name: "Microservices" },
         { name: "JWT" },
-        { name: "Mysql" }
+        { name: "React" },
+        { name: "PostgreSQL" }
+       
       ]
     },
     {
