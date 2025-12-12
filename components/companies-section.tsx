@@ -9,22 +9,32 @@ export function CompaniesSection() {
     {
       name: "CitiusTech",
       logo: "/images/citiustech-logo.png",
-      role: "Software Engineer",
+      role: "Trainee Software Engineer",
       period: "2022 - 2023",
       location: "Bengaluru, India",
       description:
-        "Worked as a Java developer specializing in creating robust and scalable healthcare solutions, enhancing patient care and operational efficiency.",
+        "Worked as a Java Developer in the healthcare domain, contributing to enterprise-level solutions for Southwestern Healthcare. Designed and implemented backend components that supported critical clinical and operational workflows, ensuring high availability, data integrity, and security. Played a key role in optimizing system performance and integrating third-party healthcare systems to streamline patient data exchange.",
       website: "https://www.citiustech.com",
     },
     {
       name: "Omnion",
       logo: "/images/omnion-logo.png",
       role: "Software Engineer",
-      period: "2024 - Present",
+      period: "2024 - 2025",
       location: "Udupi, India",
       description:
-        "Working as a Java developer proficient in database management and Docker, building scalable, containerized solutions for efficient software deployment.",
+        "I've been working extensively with Java and Spring Boot to build RESTful services for GST computation and analytics. The main challenge was integrating multiple data sources in real-time while maintaining accuracy and performance.",
       website: "https://www.omnion.com",
+    },
+    {
+      name: "Codezyng",
+      logo: "/images/c.png",
+      role: "Software Engineer I",
+      period: "2025 - Present",
+      location: "Udupi, India",
+      description:
+        "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions and improved application performance through code optimization and best practices implementation.",
+      website: "https://www.codezyng.com",
     },
   ]
 
@@ -56,7 +66,7 @@ export function CompaniesSection() {
 
         {/* Mobile View */}
         <div className="md:hidden space-y-8">
-          {companies.map((company, index) => (
+          {companies.map((company) => (
             <motion.div
               key={`mobile-${company.name}`}
               initial={{ opacity: 0, y: 20 }}
