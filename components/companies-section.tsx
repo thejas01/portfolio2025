@@ -7,7 +7,7 @@ import { MapPin, ExternalLink } from "lucide-react"
 export function CompaniesSection() {
   const companies = [
     {
-      name: "CitiusTech",
+      name: "CitiusTech Healthcare",
       logo: "/images/citiustech-logo.png",
       role: "Trainee Software Engineer",
       period: "2022 - 2023",
